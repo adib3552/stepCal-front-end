@@ -5,13 +5,28 @@
     android:layout_height="match_parent"
     android:background="#F5F5F5">
 
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="match_parent"
+        android:layout_height="670dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-302dp"
+        android:src="@drawable/top_background2" />
+
     <TextView
         android:id="@+id/text_leaderboard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to Leaderboard"
-        android:textColor="@color/custom_blue"
-        android:textSize="24sp"
+        android:layout_below="@+id/imageView5"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="-338dp"
+        android:layout_marginEnd="109dp"
+        android:layout_marginBottom="50dp"
+        android:text="StepCal Leaderboard"
+        android:textColor="@color/white"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
     <View
@@ -26,12 +41,142 @@
         android:layout_alignLeft="@id/text_leaderboard"
         android:layout_alignRight="@id/text_leaderboard" />
 
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/imageView4"
+        android:layout_below="@id/divider"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp">
+
+        <TableLayout
+            android:id="@+id/leaderboard_table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/text_rank_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rank"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:padding="8dp" />
+
+                <TextView
+                    android:id="@+id/text_user_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="User"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:padding="8dp" />
+
+                <TextView
+                    android:id="@+id/text_score_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Score"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:padding="8dp" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/text_rank_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textSize="22sp"
+                    android:padding="8dp" />
+
+                <TextView
+                    android:id="@+id/text_user_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="User 1"
+                    android:textSize="22sp"
+                    android:padding="8dp" />
+
+                <TextView
+                    android:id="@+id/text_score_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1000"
+                    android:textSize="22sp"
+                    android:padding="8dp" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/text_rank_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2"
+                    android:textSize="22sp"
+                    android:padding="8dp" />
+
+                <TextView
+                    android:id="@+id/text_user_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="User 2"
+                    android:textSize="22sp"
+                    android:padding="8dp" />
+
+                <TextView
+                    android:id="@+id/text_score_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="950"
+                    android:textSize="22sp"
+                    android:padding="8dp" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/text_rank_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3"
+                    android:textSize="22sp"
+                    android:padding="8dp" />
+
+                <TextView
+                    android:id="@+id/text_user_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="User 3"
+                    android:textSize="22sp"
+                    android:padding="8dp" />
+
+                <TextView
+                    android:id="@+id/text_score_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="800"
+                    android:textSize="22sp"
+                    android:padding="8dp" />
+            </TableRow>
+
+        </TableLayout>
+    </ScrollView>
+
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="match_parent"
         android:layout_height="231dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="-58dp"
+        android:layout_marginBottom="-49dp"
         android:rotation="180"
         app:srcCompat="@drawable/arc_2" />
 
