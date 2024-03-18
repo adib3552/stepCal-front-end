@@ -45,14 +45,11 @@
         android:layout_marginBottom="16dp">
 
         <LinearLayout
-            android:id="@+id/exerciseLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-
+            android:orientation="horizontal"
+            android:id="@+id/exerciseLayout">
         </LinearLayout>
-
     </ScrollView>
 
 </RelativeLayout>

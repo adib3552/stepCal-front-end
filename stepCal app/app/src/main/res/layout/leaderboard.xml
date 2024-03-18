@@ -57,6 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <!-- Table Header Row -->
             <TableRow>
 
                 <TextView
@@ -87,86 +88,7 @@
                     android:padding="8dp" />
             </TableRow>
 
-            <TableRow>
-
-                <TextView
-                    android:id="@+id/text_rank_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1"
-                    android:textSize="22sp"
-                    android:padding="8dp" />
-
-                <TextView
-                    android:id="@+id/text_user_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="User 1"
-                    android:textSize="22sp"
-                    android:padding="8dp" />
-
-                <TextView
-                    android:id="@+id/text_score_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1000"
-                    android:textSize="22sp"
-                    android:padding="8dp" />
-            </TableRow>
-
-            <TableRow>
-
-                <TextView
-                    android:id="@+id/text_rank_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="2"
-                    android:textSize="22sp"
-                    android:padding="8dp" />
-
-                <TextView
-                    android:id="@+id/text_user_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="User 2"
-                    android:textSize="22sp"
-                    android:padding="8dp" />
-
-                <TextView
-                    android:id="@+id/text_score_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="950"
-                    android:textSize="22sp"
-                    android:padding="8dp" />
-            </TableRow>
-
-            <TableRow>
-
-                <TextView
-                    android:id="@+id/text_rank_3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="3"
-                    android:textSize="22sp"
-                    android:padding="8dp" />
-
-                <TextView
-                    android:id="@+id/text_user_3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="User 3"
-                    android:textSize="22sp"
-                    android:padding="8dp" />
-
-                <TextView
-                    android:id="@+id/text_score_3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="800"
-                    android:textSize="22sp"
-                    android:padding="8dp" />
-            </TableRow>
+            <!-- Dynamically Added Rows Will Go Here -->
 
         </TableLayout>
     </ScrollView>
@@ -176,7 +98,7 @@
         android:layout_width="match_parent"
         android:layout_height="231dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="-49dp"
+        android:layout_marginBottom="-63dp"
         android:rotation="180"
         app:srcCompat="@drawable/arc_2" />
 
