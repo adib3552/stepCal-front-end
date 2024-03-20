@@ -1,62 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/light_blue"
     tools:context=".Activity.ActivityLevel">
 
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/level"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Activity Level"
         android:gravity="center"
         android:textSize="25sp"
         android:textStyle="bold"
-        android:layout_margin="25dp"
-        android:id="@+id/level" />
-    <RadioGroup
-        android:id="@+id/activityLevelRadioGroup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@id/level">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/buttonsLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="25dp" />
 
-        <RadioButton
+    <RelativeLayout
+        android:id="@+id/buttonsLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/level"
+        app:layout_constraintBottom_toTopOf="@+id/submit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Background images for buttons -->
+        <ImageView
+            android:id="@+id/backgroundImage1"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:src="@drawable/easy1"
+            android:scaleType="centerCrop"
+            android:layout_below="@id/level"
+            />
+
+        <ImageView
+            android:id="@+id/backgroundImage2"
+            android:layout_below="@id/backgroundImage1"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:src="@drawable/download"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/backgroundImage1"/>
+
+        <ImageView
+            android:id="@+id/backgroundImage3"
+            android:layout_below="@id/backgroundImage2"
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            android:src="@drawable/advance"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/backgroundImage2"/>
+
+        <ImageView
+            android:id="@+id/backgroundImage4"
+            android:layout_below="@id/backgroundImage3"
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            android:src="@drawable/hardcore"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/backgroundImage3"/>
+
+        <!-- Buttons -->
+        <Button
             android:id="@+id/low"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Low"
-            android:textSize="25dp" />
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            android:text="low"
+            android:textSize="50sp"
+            android:textColor="@color/black"
+            android:background="@android:color/transparent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-        <RadioButton
+        <Button
             android:id="@+id/moderate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Moderate"
-            android:textSize="25dp" />
+            android:layout_below="@id/low"
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            android:text="moderate"
+            android:textSize="50sp"
+            android:textColor="@color/black"
+            android:background="@android:color/transparent"
+            app:layout_constraintTop_toBottomOf="@+id/low"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-        <RadioButton
+        <Button
             android:id="@+id/high"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="High"
-            android:textSize="25dp" />
+            android:layout_below="@id/moderate"
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            android:text="high"
+            android:textSize="50sp"
+            android:textColor="@color/black"
+            android:background="@android:color/transparent"
+            app:layout_constraintTop_toBottomOf="@+id/moderate"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp"/>
 
-        <RadioButton
+        <Button
             android:id="@+id/extreme"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Extreme"
-            android:textSize="25dp" />
-    </RadioGroup>
+            android:layout_below="@id/high"
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            android:text="extreme"
+            android:textSize="50sp"
+            android:textColor="@color/black"
+            android:background="@android:color/transparent"
+            app:layout_constraintTop_toBottomOf="@+id/high"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp"/>
+    </RelativeLayout>
 
     <Button
         android:id="@+id/submit"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/activityLevelRadioGroup"
-        android:layout_centerVertical="true"
-        android:text="Submit" />
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/button_backgrounds"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:text="Submit"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@+id/buttonsLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"/>
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

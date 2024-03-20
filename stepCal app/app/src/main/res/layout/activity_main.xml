@@ -4,23 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/light_blue"
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/sign_in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:id="@+id/sign_in"
-        android:text="sign up"
+        android:text="Sign Up"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:background="@drawable/button_backgroundm"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
         android:onClick="signUp"/>
+
     <Button
+        android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/sign_in"
+        android:layout_below="@id/sign_in"
         android:layout_centerHorizontal="true"
-        android:id="@+id/login"
-        android:text="log in"
+        android:layout_marginTop="20dp"
+        android:text="Log In"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:background="@drawable/button_backgroundm"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
         android:onClick="logIn"/>
 
 </RelativeLayout>

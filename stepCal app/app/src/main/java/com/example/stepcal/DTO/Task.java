@@ -7,14 +7,16 @@ import java.util.Map;
 
 public class Task {
     private double target_Calorie;
-    private List<Map<String,Double>> Exercises;
+    private Map<String,Double>exercises;
 
-    public Task(double target_Calorie, List<Map<String, Double>> exercises) {
-        this.target_Calorie = target_Calorie;
-        Exercises = exercises;
-    }
+
     public Task(){
 
+    }
+
+    public Task(double target_Calorie, Map<String, Double> exercises) {
+        this.target_Calorie = target_Calorie;
+        this.exercises = exercises;
     }
 
     public double getTarget_Calorie() {
@@ -25,19 +27,19 @@ public class Task {
         this.target_Calorie = target_Calorie;
     }
 
-    public List<Map<String, Double>> getExercises() {
-        return Exercises;
+    public Map<String, Double> getExercises() {
+        return exercises;
     }
 
-    public void setExercises(List<Map<String, Double>> exercises) {
-        Exercises = exercises;
+    public void setExercises(Map<String, Double> exercises) {
+        this.exercises = exercises;
     }
 
     @Override
     public String toString() {
         return "Task{" +
                 "target_Calorie=" + target_Calorie +
-                ", Exercises=" + Exercises +
+                ", exercises=" + exercises +
                 '}';
     }
 }
