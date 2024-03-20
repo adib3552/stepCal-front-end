@@ -15,19 +15,9 @@ public class User implements Serializable {
     private String gender;
     private String activity_level;
 
-    public User(String first_name, String last_name, String email, String password, long phone_no, int age, double height, double weight, String goal, String gender, String activity_level) {
-        this.first_name = first_name;
-        this.last_name = last_name;
-        this.email = email;
-        this.password = password;
-        this.phone_no = phone_no;
-        this.age = age;
-        this.height = height;
-        this.weight = weight;
-        this.goal = goal;
-        this.gender = gender;
-        this.activity_level = activity_level;
-    }
+    int point;
+
+
     public User(){
 
     }
@@ -120,6 +110,29 @@ public class User implements Serializable {
         this.activity_level = activity_level;
     }
 
+    public User(String first_name, String last_name, String email, String password, long phone_no, int age, double height, double weight, String goal, String gender, String activity_level, int point) {
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.email = email;
+        this.password = password;
+        this.phone_no = phone_no;
+        this.age = age;
+        this.height = height;
+        this.weight = weight;
+        this.goal = goal;
+        this.gender = gender;
+        this.activity_level = activity_level;
+        this.point = point;
+    }
+
+    public int getPoint() {
+        return point;
+    }
+
+    public void setPoint(int point) {
+        this.point = point;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -134,6 +147,7 @@ public class User implements Serializable {
                 ", goal='" + goal + '\'' +
                 ", gender='" + gender + '\'' +
                 ", activity_level='" + activity_level + '\'' +
+                ", point=" + point +
                 '}';
     }
 }

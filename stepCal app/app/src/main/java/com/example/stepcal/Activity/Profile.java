@@ -42,6 +42,14 @@ public class Profile extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+      Button leaderboard_button= findViewById(R.id.leaderboard_button);
+      leaderboard_button.setOnClickListener(new View.OnClickListener(){
+          @Override
+          public void onClick(View v) {
+              Intent intent=new Intent(Profile.this, Leaderboard.class);
+              startActivity(intent);
+          }
+      });
 
         apiInterface.getProfile("Bearer "+authToken).enqueue(new Callback<User>() {
             @Override
@@ -64,6 +72,10 @@ public class Profile extends AppCompatActivity {
                         // Setting Age
                         TextView ageTextView = findViewById(R.id.age);
                         ageTextView.setText(String.valueOf(profile.getAge()));
+
+                        //srtting email
+                        TextView emailTextview = findViewById(R.id.email);
+                        emailTextview.setText(String.valueOf(profile.getEmail()));
 
                         // Setting Gender
                         TextView genderTextView = findViewById(R.id.gender);
