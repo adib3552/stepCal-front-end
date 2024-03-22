@@ -4,13 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light_blue"
+    android:background="@drawable/top_background1"
     tools:context=".Activity.SignUp">
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
     <TextView
         android:id="@+id/SignUpText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         android:text="Sign Up"
         android:gravity="center"
         android:textSize="25sp"
@@ -25,8 +31,10 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:hint="First Name"
-        android:background="@drawable/button_backgrounds"
+        android:background="@drawable/bg_rounded_white"
         android:layout_marginTop="20dp"
+        android:padding="15dp"
+        android:textColor="@android:color/black"
         android:autofillHints="" />
 
     <EditText
@@ -37,8 +45,10 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:hint="Last Name"
-        android:background="@drawable/button_backgrounds"
+        android:background="@drawable/bg_rounded_white"
         android:layout_marginTop="20dp"
+        android:padding="15dp"
+        android:textColor="@android:color/black"
         android:autofillHints="" />
 
     <EditText
@@ -47,11 +57,13 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/last_name"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        android:background="@drawable/button_backgrounds"
-        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_rounded_white"
+        android:padding="15dp"
+        android:textColor="@android:color/black"
         android:autofillHints="" />
 
     <EditText
@@ -60,11 +72,13 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/email"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:hint="Password"
         android:inputType="textPassword"
-        android:background="@drawable/button_backgrounds"
-        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_rounded_white"
+        android:padding="15dp"
+        android:textColor="@android:color/black"
         android:autofillHints="" />
 
     <EditText
@@ -73,11 +87,13 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/password"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:hint="Phone"
         android:inputType="phone"
-        android:background="@drawable/button_backgrounds"
-        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_rounded_white"
+        android:padding="15dp"
+        android:textColor="@android:color/black"
         android:autofillHints="" />
 
     <EditText
@@ -86,11 +102,13 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/phone_no"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:hint="Height"
         android:inputType="numberDecimal"
-        android:background="@drawable/button_backgrounds"
-        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_rounded_white"
+        android:padding="15dp"
+        android:textColor="@android:color/black"
         android:autofillHints="" />
 
     <EditText
@@ -99,11 +117,13 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/height"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:hint="Weight"
         android:inputType="numberDecimal"
-        android:background="@drawable/button_backgrounds"
-        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_rounded_white"
+        android:padding="15dp"
+        android:textColor="@android:color/black"
         android:autofillHints="" />
 
     <EditText
@@ -112,10 +132,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/weight"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:hint="Gender"
-        android:background="@drawable/button_backgrounds"
-        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_rounded_white"
+        android:padding="15dp"
+        android:textColor="@android:color/black"
         android:autofillHints="" />
 
     <EditText
@@ -124,24 +146,29 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/gender"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:hint="Age"
         android:inputType="number"
-        android:background="@drawable/button_backgrounds"
-        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_rounded_white"
+        android:padding="15dp"
+        android:textColor="@android:color/black"
         android:autofillHints="" />
 
     <Button
         android:id="@+id/submit"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/age"
         android:layout_centerHorizontal="true"
         android:text="Submit"
         android:textColor="@android:color/white"
-        android:background="@drawable/button_backgrounds"
+        android:background="@drawable/button_custom"
         android:layout_margin="20dp"
         android:paddingStart="20dp"
-        android:paddingEnd="20dp" />
+        android:paddingEnd="20dp"
 
+        />
+    </RelativeLayout>
+</ScrollView>
 </RelativeLayout>
