@@ -4,90 +4,41 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    >
 
     <!-- Image View for Picture -->
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="400dp"
-        android:layout_height="100dp"
-        android:src="@drawable/top_background"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp" />
+        android:id="@+id/imageView5"
+        android:layout_width="match_parent"
+        android:layout_height="670dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-302dp"
+        android:src="@drawable/top_background2" />
 
-    <!-- Text View for Title -->
-    <!-- Text View for Title -->
     <TextView
-        android:id="@+id/titleTextView"
+        android:id="@+id/text_leaderboard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Task history"
-        android:textSize="24sp"
+        android:layout_below="@+id/imageView5"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="-338dp"
+        android:layout_marginEnd="109dp"
+        android:layout_marginBottom="50dp"
+        android:text="StepCal                       Task History"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
-        android:layout_below="@id/imageView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="16dp" />
 
-    <!-- ScrollView for Data -->
-    <ScrollView
+    <ImageView
+        android:id="@+id/imageView4"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/titleTextView">
-
-        <!-- Table Layout for Data -->
-        <TableLayout
-            android:id="@+id/tableLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <!-- Table Header Row -->
-            <TableRow
-                android:id="@+id/headerRow"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <!-- Header for Name -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:textStyle="bold"
-                    android:padding="8dp" />
-
-                <!-- Header for Calorie Burn -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:textStyle="bold"
-                    android:padding="8dp" />
-
-                <!-- Header for Calorie Intake -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:textStyle="bold"
-                    android:padding="8dp" />
-
-                <!-- Header for Date -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:textStyle="bold"
-                    android:padding="8dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:textStyle="bold"
-                    android:padding="8dp"/>
-
-            </TableRow>
-
-        </TableLayout>
-
-    </ScrollView>
+        android:layout_height="231dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-63dp"
+        android:rotation="180"
+        android:src="@drawable/arc_2" />
 
 </RelativeLayout>
