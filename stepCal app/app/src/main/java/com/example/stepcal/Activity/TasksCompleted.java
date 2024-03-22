@@ -3,6 +3,7 @@ package com.example.stepcal.Activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -19,6 +20,7 @@ import com.example.stepcal.Retrofit.RetrofitClient;
 import java.util.List;
 
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -37,15 +39,33 @@ public class TasksCompleted extends AppCompatActivity {
         apiInterface = RetrofitClient.getRetrofit().create(ApiInterface.class);
         authToken = getSavedToken();
 
-        tableLayout = findViewById(R.id.tableLayout);
+        Intent prevIntent=getIntent();
+        CompletedTask completedTask= (CompletedTask) prevIntent.getSerializableExtra("complete");
+        System.out.println(completedTask);
+        tableLayout = findViewById(R.id.history); // assuming this is the ID of your TableLayout
 
-        // Fetch task history data from API
+        apiInterface.addTask("Bearer "+authToken,completedTask).enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
+                System.out.println("success");
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<ResponseBody> call, @NonNull Throwable t) {
+                System.out.println("fail");
+            }
+        });
         apiInterface.taskHistory("Bearer " + authToken).enqueue(new Callback<List<CompletedTask>>() {
             @Override
-            public void onResponse(@NonNull Call<List<CompletedTask>> call, @NonNull Response<List<CompletedTask>> response) {
-                if (response.isSuccessful() && response.body() != null) {
-                    List<CompletedTask> taskList = response.body();
-                    addHeaderRow(); // Add table header
+            public void onResponse(@NonNull Call<List<CompletedTask>> call2, @NonNull Response<List<CompletedTask>> response2) {
+                if (response2.isSuccessful() && response2.body() != null) {
+
+                    List<CompletedTask> taskList = response2.body();
+                    for(CompletedTask task:taskList){
+                        System.out.println("INN");
+                        System.out.println(task);
+                    }
+                   // addHeaderRow(); // Add table header
                     // Add each task to the table
                     for (CompletedTask task : taskList) {
                         addTableRow(task.getDate(), String.valueOf(task.getCalorie_burn()), String.valueOf(task.getCalorie_intake()));

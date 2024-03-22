@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- task_history_layout.xml -->
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:background="#F5F5F5">
 
-    <!-- Image View for Picture -->
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="match_parent"
@@ -26,11 +24,74 @@
         android:layout_marginTop="-338dp"
         android:layout_marginEnd="109dp"
         android:layout_marginBottom="50dp"
-        android:text="StepCal                       Task History"
+        android:text="Task\nHistory"
         android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold" />
 
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="#CCCCCC"
+        android:layout_below="@id/text_leaderboard"
+        android:layout_alignLeft="@id/text_leaderboard"
+        android:layout_alignRight="@id/text_leaderboard" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/imageView4"
+        android:layout_below="@id/divider"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp">
+
+        <TableLayout
+            android:id="@+id/history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Table Header Row -->
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/text_date_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Date"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:padding="8dp" />
+
+                <TextView
+                    android:id="@+id/text_calory_burn_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cal Burn"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:padding="8dp" />
+
+                <TextView
+                    android:id="@+id/text_calory_intake_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cal Intake"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:padding="8dp" />
+            </TableRow>
+
+            <!-- Dynamically Added Rows Will Go Here -->
+
+        </TableLayout>
+    </ScrollView>
 
     <ImageView
         android:id="@+id/imageView4"
@@ -39,6 +100,6 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="-63dp"
         android:rotation="180"
-        android:src="@drawable/arc_2" />
+        app:srcCompat="@drawable/arc_2" />
 
 </RelativeLayout>

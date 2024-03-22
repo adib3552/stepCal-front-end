@@ -128,8 +128,9 @@ public class Tasks extends AppCompatActivity {
             }
         }
         CompletedTask completedTask=new CompletedTask();
-        completedTask.setCalorie_burn(burn);
-
+        completedTask.setCalorie_burn(preciseCal(burn));
+        completedTask.setCalorie_intake(FoodIntake());
+        //System.out.println(completedTask);
         Intent intent=new Intent(this,TasksCompleted.class);
         intent.putExtra("complete",completedTask);
         startActivity(intent);
@@ -140,6 +141,78 @@ public class Tasks extends AppCompatActivity {
     private String getSavedToken() {
         SharedPreferences preferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         return preferences.getString("token", "");
+    }
+
+    public Double preciseCal(Double x)
+    {
+        String formattedX = String.format("%.2f", x);
+        Double result = Double.valueOf(formattedX);
+        return result;
+    }
+
+    /**
+     * Food Intake Calculation
+     */
+
+    public Double FoodIntake()
+    {
+
+        // In this initializer take User input as gram measurement Except Egg
+        // Egg Should be taken as number per egg is on avearge 50gm
+
+        TextView rice= findViewById(R.id.food1);
+        TextView chicken= findViewById(R.id.food2);
+        TextView egg= findViewById(R.id.food3);
+        TextView milk= findViewById(R.id.food4);
+        TextView salad= findViewById(R.id.food5);
+
+
+        Double Tot_In_Cal=0.0;
+        Double Rice_in=0.0;
+        Double Chicken_in=0.0;
+        Double Egg_in=0.0;
+        Double Milk_in=0.0;
+        Double Salad_in=0.0;
+
+        String riceText = rice.getText().toString();
+        if(riceText != null)
+            Rice_in=Double.parseDouble(riceText);
+
+        String chickenText = chicken.getText().toString();
+        if(chickenText != null)
+            Chicken_in=Double.parseDouble(chickenText);
+
+        String eggText = egg.getText().toString();
+        if(eggText != null)
+            Egg_in=Double.parseDouble(eggText);
+
+        String milkText = milk.getText().toString();
+        if(milkText != null)
+            Milk_in=Double.parseDouble(milkText);
+
+        String saladText = salad.getText().toString();
+        if(saladText != null)
+            Salad_in=Double.parseDouble(saladText);
+
+
+
+
+
+        Double Rice_cal=((Rice_in*1.0)/100.0)*130.0;
+
+        Double Chicken_cal=((Chicken_in*1.0)/100.0)*239.0;
+
+        double Egg_Cal=(((Egg_in*50.0))/100)*155.0;
+
+        Double Milk_cal=((Milk_in*1.0)/100)*44.0;
+
+        Double Salad_cal=((Salad_in*1.0)/100.0)*17.0;
+
+        Tot_In_Cal=Rice_cal+Chicken_cal+Egg_Cal+Milk_cal+Salad_cal;
+
+        return  preciseCal(Tot_In_Cal);
+
+
     }
 
 
